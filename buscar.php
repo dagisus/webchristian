@@ -1,9 +1,6 @@
 <?php  
-// Primero definimos la conexión a la base de datos 
-define('HOST_DB', 'localhost'); //Nombre del host, nomalmente localhost 
-define('USER_DB', 'root');  //Usuario de la bbdd 
-define('PASS_DB', '');  //Contraseña de la bbdd 
-define('NAME_DB', 'proyecto');  //Nombre de la bbdd  
+// Primero incluimos conexion.php 
+include("conexion.php");
 
 // Definimos la conexión 
 
