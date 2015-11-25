@@ -36,11 +36,7 @@ mysql_close($conexion);
 <link href="css/style.css" rel='stylesheet' type='text/css' />
 
 <!-- Custom Theme files -->
-<script src="js/jquery-1.9.1.min.js" type="text/javascript"></script>
-<script src="js/jquery.maskedinput.js" type="text/javascript"></script>
 
-<script src="js/jquery.mask.js" type="text/javascript"></script>
-<script src="js/jquery.mask.min.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="css/touchTouch.css" type="text/css" media="all" />
 <link href="css/style.css" rel='stylesheet' type='text/css' />
@@ -76,15 +72,13 @@ return valido;
 <body>
 			 <!-- InstanceBeginEditable name="todo" -->
 <!-- banner -->
- <script type="text/javascript" src="js/jquery.fancybox.js"></script>
-	   <script type="text/javascript">
+<script type="text/javascript" src="js/jquery.fancybox.js"></script>
+<script type="text/javascript">
 			$(document).ready(function() {
 				/*
 				 *  Simple image gallery. Uses default settings
 				 */
-
 				$('.fancybox').fancybox();
-
 			});
 </script>
 
@@ -111,7 +105,7 @@ return valido;
 				});
 		 </script>
 		 <!-- script-for-menu -->
-      
+
 <div class="clearfix"></div>
 
   </div>
@@ -144,6 +138,7 @@ return valido;
    	  <div class="col-md-12">
         <h3>Resultado</h3><br />
         	<div class="banner-grid-sec">
+            <form id="resultado" name="resultado" method="post">
             <table width="80%" border="0" align="center" class="table">
                 <tr>
     				<td align="center"></td>
@@ -172,38 +167,40 @@ return valido;
 							mysql_set_charset('utf8'); // para indicar a la bbdd que vamos a mostrar la info en utf 
 							 
 							//Contulta para la base de datos, se utiliza un comparador LIKE para acceder a todo lo que contenga la cadena a buscar 
-							$sql = "SELECT * FROM libros WHERE titulo LIKE '%" .$busqueda. "%' OR autor LIKE '%" .$busqueda. "%' ORDER BY titulo, autor";  
+							$sql = "SELECT * FROM libros WHERE titulo LIKE '%" .$busqueda. "%' OR autor LIKE '%" .$busqueda. "%' ORDER BY titulo, autor ASC";  
 							
 							$resultado = mysql_query($sql); //Ejecución de la consulta 
 							
 							$registros = "";
-								
+							
+							//Si hay resultados... 	
 							if (mysql_num_rows($resultado) > 0){
 				
 				 
 							// Se recoge el número de resultados 
 							$registros = '<p>SE HAN ENCONTRADO ' . mysql_num_rows($resultado) . ' REGISTROS </p>'; 
 							// Se almacenan las cadenas de resultado 
+							echo $registros;
 								while($fila = mysql_fetch_assoc($resultado)){  
 				?>
                 
   				<tr>
-                    <td align="center"><a class="fancybox" href="<?php echo $fila['imagen_libro']; ?>"> <?php echo "<img src=".$fila['imagen_libro']. " height='70' >" ;?></span></a></td>
+                    <td align="center"><a class="fancybox" href="<?php echo $fila['imagen_libro']; ?>"> <?php echo "<img src=".$fila['imagen_libro']. " height='70' >" ;?></a></td>
     				<td align="center"><?php echo $fila['isbn']; ?></td>
                     <td align="center"><?php echo $fila['dewey']; ?></td>
-                    <td align="center"><?php echo $fila['titulo']; ?></td>
+                    <td align="center"><?php echo str_replace($fila['titulo'],"<span class='resaltado'>".$fila['titulo']."</span>",$fila['titulo']); ?></td>
                     <td align="center"><?php echo $fila['autor']; ?></td>
                     <td align="center"><?php echo $fila['editorial']; ?></td>
                     <td align="center"><?php echo $fila['ejemplares']; ?></td>
-
   				</tr>
   				<?php
-								}
+				
+								} 
 							}else{ 
-							$texto = "NO HAY RESULTADOS EN LA BBDD";	 
+							$texto = "NO HAY RESULTADOS EN LA BBDD";
+							echo"<script type=\"text/javascript\">alert('\No se encontraron resultados a tu busqueda\\nIntenta buscar nuevamente\\nProcura usar palabras clave'); window.location='buscar.php';</script>";
+							//echo $texto; 
 							}
-
-							//Si hay resultados... 
 							 
 							// Después de trabajar con la bbdd, cerramos la conexión (por seguridad, no hay que dejar conexiones abiertas) 
 							
@@ -214,6 +211,7 @@ return valido;
 				?>
                 
 			</table>
+            </form>
         </div>
 	  </div>
 	</div>

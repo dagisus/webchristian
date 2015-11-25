@@ -69,7 +69,18 @@ return valido;
 </head>
 <body>
 			 <!-- InstanceBeginEditable name="todo" -->
-<!-- banner --> 
+<!-- banner -->
+<script type="text/javascript" src="js/jquery.fancybox.js"></script>
+	   <script type="text/javascript">
+			$(document).ready(function() {
+				/*
+				 *  Simple image gallery. Uses default settings
+				 */
+
+				$('.fancybox').fancybox();
+
+			});
+</script>
 <div class="banner2">	  
 	 <div class="header">
 	   <div class="logo">
@@ -83,6 +94,30 @@ return valido;
 	       <li><a href="galeria.php">Galeria</a></li>
 	       <li><a href="acerca.php">Acerca De</a></li>
 	       <li><a href="contacto.php">Contacto</a></li>
+           <li><a href="#modal1" class="Buttons" style="top:10px; position:fixed;">Menu Admin</a></li>
+                        <div id="modal1" class="modalmask">
+                            <div class="modalbox movedown">
+                                <a href="#close" title="Close" class="close">X</a>
+                                <div class="list-group">
+                                    <a href="administrador.php" class="list-group-item- active"><h1>Menu Administrador</h1></a><br/>
+                                        <div class="list-group-item-text">
+                                        <table class="table" width="100%" border="0">
+                                  <tr>
+                                    <td><a href="agregar_libros.php" class="list-group-item- active">Modulo Agregar</a><br/></td>
+                                    <td><a href="inventario.php" class="list-group-item- active">Modulo Gestión</a><br/></td>
+                                  </tr>
+                                  <tr>
+                                    <td><a href="mensajes.php" class="list-group-item- active">Modulo Mensajeria</a><br/></td>
+                                    <td><a href="info.php" class="list-group-item- active">Modulo Informativo</a><br/></td>
+                                  </tr>
+                                  <tr>
+                                    <td colspan="2" align="center"><a href="salir.php" class="list-group-item- active">Cerrar Sesión</a><br/></td>
+                                    </tr>
+                                        </table>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
          </ul>
        </div>
 	   <!-- script-for-menu -->
@@ -114,43 +149,50 @@ return valido;
 			     <div class="bs-example">
 			       <table class="table">
 			         <tr>
-			           <td width="50%">ISBN</td>
-			           <td width="50%"><label for="txt_isbn"></label>
+			           <td width="33%">ISBN</td>
+                       <td width="18%"> </td>
+			           <td width="49%"><label for="txt_isbn"></label>
                        <input name="txt_isbn" type="text" id="txt_isbn" required pattern="^(?:97[89]-)?[0-9]-[0-9]{3}-[0-9]{5}-[0-9]$" title="Si el ISBN es de 13 Digitos debe ser 978-x-xxx-xxxx-x Si el ISBN es de 10 Digitos debe ser 0-xxx-xxxxx-x" value="<?php echo $fila_libro["isbn"] ?>"></td>
 		             </tr>
 			         <tr>
 			           <td>Dewey</td>
+                       <td> </td>
 			           <td><label for="txt_dewey"></label>
 		               <input name="txt_dewey" type="text" id="txt_dewey" required pattern="[a-zA-Z0-9]{3} [a-zA-Z][0-9]{2,3}[a-z]" title="El formato debe ser ABC/123 A123Z" value="<?php echo $fila_libro["dewey"] ?>"></td>
 		             </tr>
 			         <tr>
 			           <td>Titulo</td>
+                       <td> </td>
 			           <td><label for="txt_titulo"></label>
 		               <input name="txt_titulo" type="text" id="txt_titulo" required value="<?php echo $fila_libro["titulo"] ?>"></td>
 		             </tr>
 			         <tr>
 			           <td>Autor</td>
+                       <td> </td>
 			           <td><label for="txt_autor"></label>
 		               <input name="txt_autor" type="text" id="txt_autor" required value="<?php echo $fila_libro["autor"] ?>"></td>
 		             </tr>
 			         <tr>
 			           <td>Editorial</td>
+                       <td> </td>
 			           <td><label for="txt_editorial"></label>
 		               <input name="txt_editorial" type="text" id="txt_editorial" required value="<?php echo $fila_libro["editorial"] ?>"></td>
 		             </tr>
 			         <tr>
 			           <td>Ejemplares</td>
+                       <td> </td>
 			           <td><label for="txt_ejemplares"></label>
 		               <input name="txt_ejemplares" type="text" id="txt_ejemplares" maxlength="3" required pattern="^\d{1,3}$" title="Tiene que agregar al menos 1 ejemplar. Solo numeros positivos son Recibidos." value="<?php echo $fila_libro["ejemplares"] ?>"></td>
 		             </tr>
                      <tr>
-                     	<td>Portada</td>
+                     	<td>Portada Actual</td>
+                        <td><a class="fancybox" href="<?php echo $fila_libro['imagen_libro']; ?>"> <?php echo "<img src=".$fila_libro['imagen_libro']. " height='70' >" ;?></a></td>
                         <td>                       
                         <input name="fichero" type="file" class="casilla" id="fichero" size="35" required> 
                         <input name="action" type="hidden" value="upload" /></td>
                      </tr>
 			         <tr>
-			           <td colspan="2" align="center"><input type="submit" class="sub-button" id="btnmodificar" value="Modificar"></td>
+			           <td colspan="3" align="center"><input type="submit" class="sub-button" id="btnmodificar" value="Modificar"></td>
 		             </tr>
 		           </table>
 		         </div>

@@ -83,7 +83,7 @@ return valido;
 		 <div class="main-head-section">
 					<h2>Contacto</h2>
 			<div class="contact-map">
-				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d53266.521930170304!2d-73.13024680623005!3d7.119285585415643!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e68157af751c0ed%3A0x75a0e4551148c36c!2sBucaramanga%2C+Santander!5e0!3m2!1ses-419!2sco!4v1442592347258" width="100%" height="151px" frameborder="0" style="border:0"></iframe>
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3958.892352000187!2d-73.12654588568131!3d7.138445517690274!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e6815726c72428b%3A0xf796aec0b776f337!2sUDI+Universidad+Investigaci%C3%B3n+y+Desarrollo!5e0!3m2!1ses-419!2sco!4v1448465005911" width="100%" height="150px" frameborder="0" style="border:0" allowfullscreen></iframe>
 			</div>
 		 </div>
 		 <div class="contact_top">			 		
@@ -125,19 +125,21 @@ return valido;
 	 <div class="container">
 		 <div class="ftr-sec">
 			 <div class="col-md-6 ftr-grid">
-				 <h3>Lorem ipsum</h3>
-			   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ut odio ut quam convallis ultricies. Morbi rutrum lectus tortor. Cras vitae semper mi, et feugiat dolor.</p>
-				 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ut odio ut quam convallis ultricies. Morbi rutrum lectus tortor. Cras vitae semper mi, et feugiat dolor.</p>
+				 <h3>¿Es realmente importante la biblioteca?</h3>
+			   <p>La biblioteca es un lugar de encuentro, de comunicación e intercambio de ideas donde se desarrollan experiencias interdisciplinares y 
+               se abordan los contenidos temáticos de los más diversos géneros literarios existentes en la unidad de información para niños y para adultos. 
+               La biblioteca escolar es un instrumento de desarrollo del currículo y permite el fomento de la lectura y la formación de una actitud científica, 
+               constituye un elemento que forma el individuo para el aprendizaje, fomenta la creatividad, la comunicación y facilita la recreación</p>
 			 </div>
 			 <div class="col-md-3 ftr-grid2">
 				 <h3>Paginas</h3>
 				 <ul>
 					 <li><a href="index.php"><span></span>Inicio</a></li>
-					 <li><a href="program.html"><span></span>Servicios</a></li>
-					 <li><a href="blog.html"><span></span>Blog</a></li>	
-					 <li><a href="gallery.html"><span></span>Galeria</a></li>
-                 <li><a href="about.html"><span></span>Acerca De</a></li>
-					 <li><a href="contact.html"><span></span>Contacto</a></li>
+					 <li><a href="servicios.php"><span></span>Servicios</a></li>
+					 <li><a href="blog.php"><span></span>Blog</a></li>	
+					 <li><a href="galeria.php"><span></span>Galeria</a></li>
+                 	 <li><a href="acerca.php"><span></span>Acerca De</a></li>
+					 <li><a href="contacto.php"><span></span>Contacto</a></li>
 				 </ul>
 			 </div>
 			 <div class="col-md-3 ftr-grid3">

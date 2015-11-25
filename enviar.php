@@ -1,12 +1,14 @@
 <?php 
+
+include("conexion.php");
+
 // Recoge el comentario del formulario
 $nombre = $_REQUEST["txt_nombre"];
 $correo = $_REQUEST["txt_correo"];
 $tema = $_REQUEST["txt_tema"];
 $mensaje = $_REQUEST["txt_mensaje"];
 
-$conexion = mysql_connect("localhost","root","");
-mysql_select_db("proyecto",$conexion);
+
 $sentencia = "INSERT INTO mensajes (nombre, correo, tema, mensaje) VALUES ('" . $nombre . "','" . $correo . "','" . $tema . "','" . $mensaje . "')";
 $resultado = mysql_query($sentencia,$conexion);
 

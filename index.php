@@ -1,8 +1,11 @@
 <?php  
+
+include("conexion.php");
+
 // Primero definimos la conexión a la base de datos 
 define('HOST_DB', 'localhost'); //Nombre del host, nomalmente localhost 
 define('USER_DB', 'root');  //Usuario de la bbdd 
-define('PASS_DB', '');  //Contraseña de la bbdd 
+define('PASS_DB', 'AbcD1234');  //Contraseña de la bbdd 
 define('NAME_DB', 'proyecto');  //Nombre de la bbdd  
 
 // Definimos la conexión 
@@ -191,7 +194,7 @@ return valido;
 		    <div class="col-md-3 banner-grid">
 		      <h3>Iniciar Sesi&oacute;n</h3>
 		      <div class="banner-grid-sec">
-		        <form name="session" id="session" method="post" onSubmit="return validar()" action="Verificar.php" >
+		        <form name="session" id="session" method="post" onSubmit="return validar()" action="verificar.php" >
 		          Usuario:
                   <input name="txtusuario" type="search" required class="banner-grid-sec" id="txtusuario" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{6,20}$" title="Minimo 6 caracteres"/><br>
                   Contrase&ntilde;a:
@@ -213,32 +216,31 @@ return valido;
 			 <div class="col-md-9 campus">
 				 <div class="campus_head">
 					 <h3>Inicio</h3>
-					 <p>Nunc justo sapien, cursus at urna at, placerat porttitor tellus. Aliquam vehicula tellus nunc,
-					 id pretium lacus placerat dignissim. Donec quis dui sed lacus vulputate scelerisque a sit amet neque.</p>
+					 <p>La biblioteca escolar se define como una institución del sistema social que organiza materiales bibliográficos, audiovisuales y otros medios y los pone a disposición de una comunidad educativa. La biblioteca de la Fundación Colegio UIS es un lugar de conocimiento y aprendizaje, que alberga una colección organizada y centralizada de todos los materiales informativos como libros, enciclopedias, atlas, discos compactos, etc., que necesita el colegio para desarrollo de las diferentes tareas docentes.</p>
 				 </div>
 				 <div class="col-md-3 wel_grid">
 					 <img src="images/w1.jpg" class="img-responsive" alt=""/>
 					 <h5><a href="#">Aliquam sit amet</a></h5>
-					 <p>Morbi molestie nec ante ultrices. Cum sociis natoque penatibus et magnis dis parturient</p>
+					 <p>Modulos para estudiates</p>
 				 </div>
 				 <div class="col-md-3 wel_grid">
 					 <img src="images/w3.jpg" class="img-responsive" alt=""/>
 					 <h5><a href="#">Aliquam sit amet</a></h5>
-					 <p>Morbi molestie nec ante ultrices. Cum sociis natoque penatibus et magnis dis parturient</p>
+					 <p>Modulos de estudio</p>
 				 </div>
 				 <div class="col-md-3 wel_grid">
 					 <img src="images/w2.jpg" class="img-responsive" alt=""/>
 					 <h5><a href="#">Aliquam sit amet</a></h5>
-					 <p>Morbi molestie nec ante ultrices. Cum sociis natoque penatibus et magnis dis parturient</p>
+					 <p>Modulos de aprendizaje</p>
 				 </div>
 				 <div class="col-md-3 wel_grid">
 					 <img src="images/w4.jpg" class="img-responsive" alt=""/>
 					 <h5><a href="#">Aliquam sit amet</a></h5>
-					 <p>Morbi molestie nec ante ultrices. Cum sociis natoque penatibus et magnis dis parturient</p>
+					 <p>Modulos de prestamo</p>
 				 </div>
 				 <div class="clearfix"></div>
 				 <div class="more_info">
-						 <a href="blog.html">Mas Informaci&oacute;n....</a>
+						 <a href="blog.html">PROXIMAMENTE....</a>
 				 </div>
 			 </div>
 			 <div class="col-md-3 testimonal">
@@ -268,11 +270,11 @@ return valido;
 		     <div class="col-md-3 event-grid">
 				 <div class="date">
 				     <h4>02</h4>
-					 <span>09/2015</span>
+					 <span>08/2015</span>
 				 </div>				 
 			     <div class="event-info">
-					  <h5><a href="#">Presentacion del Proyecto</a></h5>
-						<p>Se debe presentar la pagina web con una conexion a la pagina de administrador.</p>					
+					  <h5><a href="#">Inicio del Proyecto</a></h5>
+						<p>Empieza la idea de BibSoft</p>					
 				 </div>
 				 <div class="clearfix"></div>				 			 
 			 </div>
@@ -289,21 +291,21 @@ return valido;
 			 </div>
 			 <div class="col-md-3 event-grid">
 			   <div class="date">
-			     <h4>19</h4>
+			     <h4>25</h4>
 			     <span>11/2015</span> </div>
 			   <div class="event-info">
 			     <h5><a href="#">Entrega Final del Proyecto</a></h5>
-			     <p>Este sera el ultimo para presentar el proyecto.</p>
+			     <p>Este sera el ultimo dia para presentar el proyecto.</p>
 		       </div>
 			   <div class="clearfix"></div>
 		    </div>
             <div class="col-md-3 event-grid">
 			   <div class="date">
-			     <h4>24</h4>
+			     <h4>27</h4>
 			     <span>11/2015</span> </div>
 			   <div class="event-info">
 			     <h5><a href="#">Sustentacion del Proyecto</a></h5>
-			     <p>Esta sera la fecha para sustentar.</p>
+			     <p>Fecha final para sustentar.</p>
 		       </div>
 			   <div class="clearfix"></div>
 		    </div>
@@ -316,19 +318,21 @@ return valido;
 	 <div class="container">
 		 <div class="ftr-sec">
 			 <div class="col-md-6 ftr-grid">
-				 <h3>Lorem ipsum</h3>
-			   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ut odio ut quam convallis ultricies. Morbi rutrum lectus tortor. Cras vitae semper mi, et feugiat dolor.</p>
-				 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ut odio ut quam convallis ultricies. Morbi rutrum lectus tortor. Cras vitae semper mi, et feugiat dolor.</p>
+				 <h3>¿Es realmente importante la biblioteca?</h3>
+			   <p>La biblioteca es un lugar de encuentro, de comunicación e intercambio de ideas donde se desarrollan experiencias interdisciplinares y 
+               se abordan los contenidos temáticos de los más diversos géneros literarios existentes en la unidad de información para niños y para adultos. 
+               La biblioteca escolar es un instrumento de desarrollo del currículo y permite el fomento de la lectura y la formación de una actitud científica, 
+               constituye un elemento que forma el individuo para el aprendizaje, fomenta la creatividad, la comunicación y facilita la recreación</p>
 			 </div>
 			 <div class="col-md-3 ftr-grid2">
 				 <h3>Paginas</h3>
 				 <ul>
 					 <li><a href="index.php"><span></span>Inicio</a></li>
-					 <li><a href="program.html"><span></span>Servicios</a></li>
-					 <li><a href="blog.html"><span></span>Blog</a></li>	
-					 <li><a href="gallery.html"><span></span>Galeria</a></li>
-                 <li><a href="about.html"><span></span>Acerca De</a></li>
-					 <li><a href="contact.html"><span></span>Contacto</a></li>
+					 <li><a href="servicios.php"><span></span>Servicios</a></li>
+					 <li><a href="blog.php"><span></span>Blog</a></li>	
+					 <li><a href="galeria.php"><span></span>Galeria</a></li>
+                 	 <li><a href="acerca.php"><span></span>Acerca De</a></li>
+					 <li><a href="contacto.php"><span></span>Contacto</a></li>
 				 </ul>
 			 </div>
 			 <div class="col-md-3 ftr-grid3">

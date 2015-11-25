@@ -67,6 +67,30 @@ return valido;
 	       <li><a href="galeria.php">Galeria</a></li>
 	       <li><a href="acerca.php">Acerca De</a></li>
 	       <li><a href="contacto.php">Contacto</a></li>
+           <li><a href="#modal1" class="Buttons" style="top:10px; position:fixed;">Menu Admin</a></li>
+                        <div id="modal1" class="modalmask">
+                            <div class="modalbox movedown">
+                                <a href="#close" title="Close" class="close">X</a>
+                                <div class="list-group">
+                                    <a href="administrador.php" class="list-group-item- active"><h1>Menu Administrador</h1></a><br/>
+                                        <div class="list-group-item-text">
+                                        <table class="table" width="100%" border="0">
+                                  <tr>
+                                    <td><a href="agregar_libros.php" class="list-group-item- active">Modulo Agregar</a><br/></td>
+                                    <td><a href="inventario.php" class="list-group-item- active">Modulo Gestión</a><br/></td>
+                                  </tr>
+                                  <tr>
+                                    <td><a href="mensajes.php" class="list-group-item- active">Modulo Mensajeria</a><br/></td>
+                                    <td><a href="info.php" class="list-group-item- active">Modulo Informativo</a><br/></td>
+                                  </tr>
+                                  <tr>
+                                    <td colspan="2" align="center"><a href="salir.php" class="list-group-item- active">Cerrar Sesión</a><br/></td>
+                                    </tr>
+                                        </table>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
          </ul>
        </div>
 	   <!-- script-for-menu -->

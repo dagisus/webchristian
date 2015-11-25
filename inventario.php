@@ -17,6 +17,7 @@ if ($num_registro==0)
 
 $registros=20;
 $pagina= $_REQUEST["num"];
+
 if(is_numeric($pagina))
 $inicio=(($pagina-1)*$registros);
 
@@ -38,11 +39,7 @@ $paginas=ceil($num_registro/$registros);
 <link href="css/style.css" rel='stylesheet' type='text/css' />
 
 <!-- Custom Theme files -->
-<script src="js/jquery-1.9.1.min.js" type="text/javascript"></script>
-<script src="js/jquery.maskedinput.js" type="text/javascript"></script>
 
-<script src="js/jquery.mask.js" type="text/javascript"></script>
-<script src="js/jquery.mask.min.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="css/touchTouch.css" type="text/css" media="all" />
 <link href="css/style.css" rel='stylesheet' type='text/css' />
@@ -78,6 +75,17 @@ return valido;
 <body>
 			 <!-- InstanceBeginEditable name="todo" -->
 <!-- banner --> 
+<script type="text/javascript" src="js/jquery.fancybox.js"></script>
+	   <script type="text/javascript">
+			$(document).ready(function() {
+				/*
+				 *  Simple image gallery. Uses default settings
+				 */
+
+				$('.fancybox').fancybox();
+
+			});
+</script>
 <div class="banner2">	  
 	 <div class="header">
 	   <div class="logo">
@@ -91,6 +99,30 @@ return valido;
 	       <li><a href="galeria.php">Galeria</a></li>
 	       <li><a href="acerca.php">Acerca De</a></li>
 	       <li><a href="contacto.php">Contacto</a></li>
+           <li><a href="#modal1" class="Buttons" style="top:10px; position:fixed;">Menu Admin</a></li>
+                        <div id="modal1" class="modalmask">
+                            <div class="modalbox movedown">
+                                <a href="#close" title="Close" class="close">X</a>
+                                <div class="list-group">
+                                    <a href="administrador.php" class="list-group-item- active"><h1>Menu Administrador</h1></a><br/>
+                                        <div class="list-group-item-text">
+                                        <table class="table" width="100%" border="0">
+                                  <tr>
+                                    <td><a href="agregar_libros.php" class="list-group-item- active">Modulo Agregar</a><br/></td>
+                                    <td><a href="inventario.php" class="list-group-item- active">Modulo Gestión</a><br/></td>
+                                  </tr>
+                                  <tr>
+                                    <td><a href="mensajes.php" class="list-group-item- active">Modulo Mensajeria</a><br/></td>
+                                    <td><a href="info.php" class="list-group-item- active">Modulo Informativo</a><br/></td>
+                                  </tr>
+                                  <tr>
+                                    <td colspan="2" align="center"><a href="salir.php" class="list-group-item- active">Cerrar Sesión</a><br/></td>
+                                    </tr>
+                                        </table>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
          </ul>
        </div>
 	   <!-- script-for-menu -->
@@ -146,7 +178,7 @@ return valido;
 			           <td><?php echo $fila["autor"];?></td>
 			           <td><?php echo $fila["editorial"];?></td>
 			           <td><?php echo $fila["ejemplares"];?></td>
-                       <td><?php echo "<img src= " .$fila['imagen_libro']. " border='0' width='50' height='75'>" ;?></td>
+                       <td><a class="fancybox" href="<?php echo $fila['imagen_libro']; ?>"> <?php echo "<img src=".$fila['imagen_libro']. " height='70' >" ;?></a></td>
 			           <td><a href="modificar_libros.php?id=<?php echo $fila["id_libro"];?>">Modificar</a></td>
 			           <td><a href="eliminar_libros.php?archivo=<?php echo $fila["titulo"];?>">Eliminar</a></td>
 		             </tr>

@@ -143,19 +143,21 @@ return valido;
 	 <div class="container">
 		 <div class="ftr-sec">
 			 <div class="col-md-6 ftr-grid">
-				 <h3>Lorem ipsum</h3>
-			   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ut odio ut quam convallis ultricies. Morbi rutrum lectus tortor. Cras vitae semper mi, et feugiat dolor.</p>
-				 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ut odio ut quam convallis ultricies. Morbi rutrum lectus tortor. Cras vitae semper mi, et feugiat dolor.</p>
+				 <h3>¿Es realmente importante la biblioteca?</h3>
+			   <p>La biblioteca es un lugar de encuentro, de comunicación e intercambio de ideas donde se desarrollan experiencias interdisciplinares y 
+               se abordan los contenidos temáticos de los más diversos géneros literarios existentes en la unidad de información para niños y para adultos. 
+               La biblioteca escolar es un instrumento de desarrollo del currículo y permite el fomento de la lectura y la formación de una actitud científica, 
+               constituye un elemento que forma el individuo para el aprendizaje, fomenta la creatividad, la comunicación y facilita la recreación</p>
 			 </div>
 			 <div class="col-md-3 ftr-grid2">
 				 <h3>Paginas</h3>
 				 <ul>
 					 <li><a href="index.php"><span></span>Inicio</a></li>
-					 <li><a href="program.html"><span></span>Servicios</a></li>
-					 <li><a href="blog.html"><span></span>Blog</a></li>	
-					 <li><a href="gallery.html"><span></span>Galeria</a></li>
-                 <li><a href="about.html"><span></span>Acerca De</a></li>
-					 <li><a href="contact.html"><span></span>Contacto</a></li>
+					 <li><a href="servicios.php"><span></span>Servicios</a></li>
+					 <li><a href="blog.php"><span></span>Blog</a></li>	
+					 <li><a href="galeria.php"><span></span>Galeria</a></li>
+                 	 <li><a href="acerca.php"><span></span>Acerca De</a></li>
+					 <li><a href="contacto.php"><span></span>Contacto</a></li>
 				 </ul>
 			 </div>
 			 <div class="col-md-3 ftr-grid3">

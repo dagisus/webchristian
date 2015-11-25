@@ -1,4 +1,8 @@
 <?php 
+
+include("conexion.php");
+
+
 // Recoge el comentario del formulario
 $isbn = $_REQUEST["txt_isbn"];
 $dewey = $_REQUEST["txt_dewey"];
@@ -24,8 +28,7 @@ $destino = "images/libros/" . $fichero;
 //Copia el fichero al directorio de nuestro servidor, cogiendolo de la ubicacion temporal
 if (move_uploaded_file($fichero_tmp,$destino)) {
 //Conecta con la Base de Datos e inserta la informacion en la ruta y comentario del fichero
-$conexion = mysql_connect("localhost","root","");
-mysql_select_db("proyecto",$conexion);
+
 $sentencia = "INSERT INTO libros (isbn, dewey, titulo, autor, editorial, ejemplares, imagen_libro) VALUES ('" . $isbn . "','" . $dewey . "','" . $titulo . "','" . $autor . "','" . $editorial . "','" . $ejemplares . "','" . $destino . "')";
 $resultado = mysql_query($sentencia,$conexion);
 	if ($resultado) {

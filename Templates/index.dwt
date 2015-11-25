@@ -9,11 +9,7 @@
 <link href="../css/style.css" rel='stylesheet' type='text/css' />
 
 <!-- Custom Theme files -->
-<script src="../js/jquery-1.9.1.min.js" type="text/javascript"></script>
-<script src="../js/jquery.maskedinput.js" type="text/javascript"></script>
 
-<script src="../js/jquery.mask.js" type="text/javascript"></script>
-<script src="../js/jquery.mask.min.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="css/touchTouch.css" type="text/css" media="all" />
 <link href="css/style.css" rel='stylesheet' type='text/css' />
@@ -129,7 +125,7 @@ return valido;
 		    <div class="col-md-3 banner-grid">
 		      <h3>Iniciar Sesión</h3>
 		      <div class="banner-grid-sec">
-		        <form name="session" id="session" method="post" onSubmit="return validar()" action="../Verificar.php" >
+		        <form name="session" id="session" method="post" onSubmit="return validar()" action="../verificar.php" >
 		          Usuario:
                   <input type="text" name="txtusuario" id="txtusuario" /><br>
                   Contraseña:
